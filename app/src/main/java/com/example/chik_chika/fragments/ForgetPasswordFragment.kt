@@ -34,7 +34,8 @@ class ForgetPasswordFragment: Fragment(R.layout.fragment_forget) {
                 editEmail.error = "Enter valid e-mail address. Try again."
                 return@setOnClickListener
             }
-            if(!(email.matches(emailPattern.toRegex())) && !(email.matches(emailPattern2.toRegex()))){
+            if(!(email.matches(emailPattern.toRegex())) &&
+                !(email.matches(emailPattern2.toRegex()))){
                 editEmail.error = "Incorrect Email"
                 return@setOnClickListener
             }
