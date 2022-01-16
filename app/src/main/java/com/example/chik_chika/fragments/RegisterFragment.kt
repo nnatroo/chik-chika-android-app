@@ -5,8 +5,10 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.chik_chika.R
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterFragment: Fragment(R.layout.fragment_register) {
     private lateinit var editTextMail: EditText
@@ -51,7 +53,7 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
                 editTextMail.error = "Enter valid e-mail address. Try again."
                 return@setOnClickListener
             }
-            if(!(mail.matches(emailPattern.toRegex())) && mail.matches(emailPattern2.toRegex())){
+            if(!(mail.matches(emailPattern.toRegex())) && !(mail.matches(emailPattern2.toRegex()))){
                 editTextMail.error = "Incorrect Email"
                 return@setOnClickListener
             }
@@ -71,6 +73,11 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
                 editPassword2.error = "Passwords don't match"
                 return@setOnClickListener
             }
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail,pass).addOnCompleteListener{ task-> if(task.isSuccessful) {
+                Toast. makeText(getActivity(),"You signed up succesfully!",Toast. LENGTH_SHORT). show();
+            }
+            else Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show()}
+
 
         }
     }

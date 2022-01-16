@@ -5,8 +5,10 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.chik_chika.R
+import com.google.firebase.auth.FirebaseAuth
 
 class ForgetPasswordFragment: Fragment(R.layout.fragment_forget) {
     private lateinit var editEmail : EditText
@@ -39,6 +41,11 @@ class ForgetPasswordFragment: Fragment(R.layout.fragment_forget) {
                 editEmail.error = "Incorrect Email"
                 return@setOnClickListener
             }
+            FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                .addOnCompleteListener { task -> if(task.isSuccessful){
+                    Toast.makeText(getActivity(), "Check E-mail for new password", Toast.LENGTH_SHORT).show()
+                }
+                }
         }
 
     }
