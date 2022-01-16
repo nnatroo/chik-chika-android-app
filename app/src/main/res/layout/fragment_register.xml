@@ -32,7 +32,7 @@
             android:textColor="#03A9F4"/>
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/editTextMail"
             android:layout_width="300dp"
             android:hint="E-MAIL"
             android:layout_gravity="center"
@@ -43,7 +43,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/editPassword"
             android:layout_width="300dp"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"
@@ -54,7 +54,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editTextTextPassword3"
+            android:id="@+id/editPassword2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="REENTER PASSWORD"
@@ -65,7 +65,7 @@
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/signInButton"
             android:layout_width="200dp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"

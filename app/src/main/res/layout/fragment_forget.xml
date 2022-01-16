@@ -33,7 +33,7 @@
             android:textColor="#03A9F4"/>
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/editEmail"
             android:layout_width="300dp"
             android:hint="E-MAIL"
             android:layout_gravity="center"
@@ -45,7 +45,7 @@
 
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/buttonSend"
             android:layout_width="200dp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
