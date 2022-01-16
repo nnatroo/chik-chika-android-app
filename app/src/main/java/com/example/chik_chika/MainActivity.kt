@@ -12,9 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val loginFragment = LoginFragment()
-        val fm: FragmentManager = supportFragmentManager
-        fm.beginTransaction().add(R.id.main_layout, loginFragment).commit()
+//        val loginFragment = LoginFragment()
+//        val fm: FragmentManager = supportFragmentManager
+//        fm.beginTransaction().add(R.id.activity_main, loginFragment).commit()
 
     }
 }

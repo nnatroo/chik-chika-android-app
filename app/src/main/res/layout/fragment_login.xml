@@ -22,6 +22,7 @@
             android:id="@+id/imageView3"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/pngegg"
             tools:layout_gravity="center" />
 
@@ -39,7 +40,9 @@
         <EditText
             android:id="@+id/editTextMail"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:paddingStart="5dp"
+            android:background="@drawable/custom_input"
             android:ems="10"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"

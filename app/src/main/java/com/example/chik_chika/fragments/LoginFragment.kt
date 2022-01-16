@@ -1,10 +1,13 @@
 package com.example.chik_chika.fragments
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.chik_chika.R
 
 class LoginFragment : Fragment(R.layout.fragment_login){
@@ -24,12 +27,15 @@ class LoginFragment : Fragment(R.layout.fragment_login){
 
     }
 
+
+
     private fun init(){
         editTextMail = requireView().findViewById(R.id.editTextMail)
         editTextPassword = requireView().findViewById(R.id.editTextPassword)
         buttonLogin = requireView().findViewById(R.id.buttonLogin)
         buttonReset = requireView().findViewById(R.id.buttonReset)
         buttonRegister = requireView().findViewById(R.id.buttonRegister)
+
 
 
     }
@@ -47,6 +53,9 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             if(password.isEmpty()){
                 editTextPassword.error = "Password is empty!"
             }
+
+
+
 
 
 
