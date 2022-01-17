@@ -107,9 +107,7 @@ class LoginFragment : Fragment(R.layout.fragment_login){
 
     }
 
-private fun gotoProfile(){
 
-}
 
 
 

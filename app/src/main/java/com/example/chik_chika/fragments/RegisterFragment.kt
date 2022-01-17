@@ -1,5 +1,6 @@
 package com.example.chik_chika.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.view.LayoutInflater
@@ -9,7 +10,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.example.chik_chika.R
+import com.example.chik_chika.TimelineActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class RegisterFragment: Fragment(R.layout.fragment_register) {
@@ -20,11 +23,16 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
     private val emailPattern2 = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+\\.+[a-z]+"
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         init()
         registerListeners()
+
+
 
 
     }
@@ -78,8 +86,11 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
                 editPassword2.error = "Passwords don't match"
                 return@setOnClickListener
             }
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail,pass).addOnCompleteListener{ task-> if(task.isSuccessful) {
-                Toast. makeText(getActivity(),"You signed up succesfully!",Toast. LENGTH_SHORT). show();
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail,pass)
+                .addOnCompleteListener{ task-> if(task.isSuccessful) {
+                Toast. makeText(getActivity(),"You signed up succesfully!",Toast. LENGTH_SHORT)
+                    . show();
+                    startActivity(Intent(activity, TimelineActivity::class.java))
             }
             else Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show()}
 
