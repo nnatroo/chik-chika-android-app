@@ -2,10 +2,13 @@ package com.example.chik_chika.fragments
 
 import android.os.Bundle
 import android.util.Patterns
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.example.chik_chika.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -25,8 +28,9 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         init()
         loginListeners()
 
-
     }
+
+
 
     private fun init(){
         editTextMail = requireView().findViewById(R.id.editTextMail)
@@ -36,6 +40,21 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         buttonRegister = requireView().findViewById(R.id.buttonRegister)
 
 
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_login, container, false)
+        val nextBtn : Button = view.findViewById(R.id.buttonRegister)
+        nextBtn.setOnClickListener() {
+            val fragment = RegisterFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.nav_host_fragment, fragment)?.commit()
+        }
+        return view
     }
 
     private fun loginListeners(){
@@ -76,8 +95,8 @@ class LoginFragment : Fragment(R.layout.fragment_login){
                 .signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task -> if(task.isSuccessful){
 
-            }
-            }
+                }
+                }
 
 
 
@@ -86,9 +105,9 @@ class LoginFragment : Fragment(R.layout.fragment_login){
 
     }
 
-private fun gotoProfile(){
+    private fun gotoProfile(){
 
-}
+    }
 
 
 

@@ -20,8 +20,9 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="40dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/pngegg"
             tools:layout_gravity="center" />
@@ -31,33 +32,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginBottom="40dp"
             android:textStyle="bold"
             android:textColor="#03A9F4"
-            android:layout_marginBottom="10dp"
             android:text="ჭიკჭიკა"
             android:textSize="50sp"/>
 
         <EditText
             android:id="@+id/editTextMail"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:paddingStart="5dp"
+            android:drawablePadding="5dp"
+            android:textColor="@color/black"
+            android:drawableTint="#00AEFF"
             android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/ic_baseline_alternate_email_24"
             android:ems="10"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:hint="E-mail"
-            android:textColorHint="#03A9F4"
+            android:textColorHint="#535353"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:paddingStart="5dp"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="5dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginBottom="20dp"
+            android:drawableTint="#00AEFF"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:textColor="@color/black"
             android:ems="10"
-            android:textColorHint="#03A9F4"
+            android:textColorHint="#535353"
             android:hint="Password"
             android:inputType="textPassword" />
 
