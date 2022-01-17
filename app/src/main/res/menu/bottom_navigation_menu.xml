@@ -3,20 +3,14 @@
 
     <item android:id="@+id/homeFragment"
         android:iconTint="@color/white"
-        android:title="Home"/>
+        android:icon="@drawable/ic_baseline_dynamic_feed_24"
+        android:title="Feed"/>
 
     <item android:id="@+id/dashboardFragment"
         android:iconTint="@color/white"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile"/>
 
-        android:title="Dashboard"/>
-
-    <item android:id="@+id/notificationFragment"
-        android:iconTint="@color/white"
-        android:title="Notifications"/>
-
-    <item android:id="@+id/paymentsFragment"
-        android:iconTint="@color/white"
-        android:title="Payments"/>
 
 
 

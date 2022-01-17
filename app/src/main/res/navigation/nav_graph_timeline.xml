@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_timeline"
+    app:startDestination="@id/timeline">
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.chik_chika.fragmentsTimeline.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:label="Profile" >
+        <action
+            android:id="@+id/action_profile_to_timeline"
+            app:destination="@id/timeline" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/timeline"
+        tools:layout="@layout/fragment_timeline"
+        android:name="com.example.chik_chika.fragmentsTimeline.TimelineFragment"
+        android:label="Timeline" >
+        <action
+            android:id="@+id/action_timeline_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+</navigation>
