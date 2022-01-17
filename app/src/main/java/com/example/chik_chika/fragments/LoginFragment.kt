@@ -93,7 +93,9 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             FirebaseAuth.getInstance()
                 .signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task -> if(task.isSuccessful){
+
                     startActivity(Intent(activity, TimelineActivity::class.java))
+                    getActivity()?.finish()
 
             }else {
                     Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
