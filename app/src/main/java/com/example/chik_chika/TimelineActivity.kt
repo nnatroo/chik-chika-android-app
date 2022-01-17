@@ -32,4 +32,6 @@ class TimelineActivity : AppCompatActivity() {
         navView.setupWithNavController(controller)
 
     }
+
+
 }
