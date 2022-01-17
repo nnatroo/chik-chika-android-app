@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import com.example.chik_chika.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -22,23 +21,8 @@ class LoginFragment : Fragment(R.layout.fragment_login){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val controller = Navigation.findNavController(view)
-
-
 
         init()
-
-        buttonReset.setOnClickListener(){
-
-            val action = LoginFragmentDirections.actionLoginFragmentToForgetPasswordFragment()
-            controller.navigate(action)
-        }
-
-        buttonRegister.setOnClickListener(){
-            val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
-            controller.navigate(action)
-        }
-
         loginListeners()
 
 
@@ -53,7 +37,6 @@ class LoginFragment : Fragment(R.layout.fragment_login){
 
 
     }
-
 
     private fun loginListeners(){
         buttonLogin.setOnClickListener{
@@ -93,10 +76,8 @@ class LoginFragment : Fragment(R.layout.fragment_login){
                 .signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task -> if(task.isSuccessful){
 
-
             }
             }
-
 
 
 
