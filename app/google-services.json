@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "696740541205",
+    "project_id": "chik-chika-f66fe",
+    "storage_bucket": "chik-chika-f66fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696740541205:android:1fad8c8807adcc6a83af1c",
+        "android_client_info": {
+          "package_name": "com.example.chik_chika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696740541205-m4l6ljl0blrntabub5ak03vrg9qvcfhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4Q9DR-rhL1gg1BOncey5NIjl8ZQ2cclA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696740541205-m4l6ljl0blrntabub5ak03vrg9qvcfhb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696740541205:android:4776bbc2600bf4ee83af1c",
+        "android_client_info": {
+          "package_name": "com.example.navigationbartestingnatroshvili"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696740541205-m4l6ljl0blrntabub5ak03vrg9qvcfhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4Q9DR-rhL1gg1BOncey5NIjl8ZQ2cclA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696740541205-m4l6ljl0blrntabub5ak03vrg9qvcfhb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
