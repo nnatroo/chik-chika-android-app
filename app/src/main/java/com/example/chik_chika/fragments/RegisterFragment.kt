@@ -91,6 +91,7 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
                 Toast. makeText(getActivity(),"You signed up succesfully!",Toast. LENGTH_SHORT)
                     . show();
                     startActivity(Intent(activity, TimelineActivity::class.java))
+                    getActivity()?.finish()
             }
             else Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show()}
 
