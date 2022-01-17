@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".TimelineActivity">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:id="@+id/nav_host_fragment_timeline"
         android:name="androidx.navigation.fragment.NavHostFragment"
