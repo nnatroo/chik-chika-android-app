@@ -38,7 +38,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         imageVewPicture.setOnClickListener( View.OnClickListener {
             checkPermission()
-            loadImage()
         })
 
         val userMail = FirebaseAuth.getInstance().currentUser?.email
