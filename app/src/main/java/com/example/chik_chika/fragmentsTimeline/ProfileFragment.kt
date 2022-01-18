@@ -35,9 +35,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         init()
         signOutListener()
         changePasswordListener()
+        checkPermission()
+
 
         imageVewPicture.setOnClickListener( View.OnClickListener {
-            checkPermission()
+            loadImage()
         })
 
         val userMail = FirebaseAuth.getInstance().currentUser?.email
@@ -95,7 +97,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         when(requestCode){
             READIMAGE->{
                 if(grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                    loadImage()
+
                 }else{
                     Toast.makeText(activity,"Cannot access your images",Toast.LENGTH_LONG).show()
                 }
