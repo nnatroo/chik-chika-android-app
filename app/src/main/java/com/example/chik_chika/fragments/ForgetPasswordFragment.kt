@@ -28,9 +28,13 @@ class ForgetPasswordFragment: Fragment(R.layout.fragment_forget) {
         buttonSend = view.findViewById(R.id.buttonSend)
         signInPageButton = view.findViewById(R.id.signInPageButton)
 
-
-
         resetListener()
+
+        signInPageButton.setOnClickListener(){
+            val controller = view?.let { it1 -> Navigation.findNavController(it1) }
+            val action = ForgetPasswordFragmentDirections.actionForgetPasswordFragmentToLoginFragment()
+            controller?.navigate(action)
+        }
 
 
 
@@ -56,9 +60,9 @@ class ForgetPasswordFragment: Fragment(R.layout.fragment_forget) {
                 .addOnCompleteListener { task -> if(task.isSuccessful){
                     Toast.makeText(getActivity(), "Check E-mail for new password", Toast.LENGTH_SHORT).show()
 
-                    val controller = Navigation.findNavController(view)
-                    val action = ForgetPasswordFragment.
-                    controller.navigate(action)
+                    val controller = view?.let { it1 -> Navigation.findNavController(it1) }
+                    val action = ForgetPasswordFragmentDirections.actionForgetPasswordFragmentToLoginFragment()
+                    controller?.navigate(action)
 
                 }else {
                     Toast.makeText(activity, "Wrong Email, Try again !", Toast.LENGTH_SHORT).show()

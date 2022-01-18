@@ -7,12 +7,15 @@
     tools:context=".TimelineActivity">
 
     <fragment
-        android:layout_width="match_parent"
         android:id="@+id/nav_host_fragment_timeline"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        app:defaultNavHost = "true"
-        app:navGraph = "@navigation/nav_graph_timeline"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph_timeline" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

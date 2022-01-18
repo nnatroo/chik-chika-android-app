@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_profile_to_timeline"
             app:destination="@id/timeline" />
+        <action
+            android:id="@+id/action_profile_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
     </fragment>
 
     <fragment
@@ -22,6 +25,15 @@
         android:label="Timeline" >
         <action
             android:id="@+id/action_timeline_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        tools:layout="@layout/fragment_change_password"
+        android:name="com.example.chik_chika.fragmentsTimeline.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" >
+        <action
+            android:id="@+id/action_changePasswordFragment_to_profile"
             app:destination="@id/profile" />
     </fragment>
 </navigation>

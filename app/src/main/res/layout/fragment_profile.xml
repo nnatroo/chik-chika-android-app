@@ -44,15 +44,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
         android:drawableStart="@drawable/ic_baseline_lock_24"
         android:drawableTint="@color/black"
-        android:text="Change Password"
         android:fontFamily="@font/segoe_ui_regular"
+        android:text="Change Password"
         android:textColor="@color/black"
+        android:id="@+id/textViewChangePassword"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/signOut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/signOut" />
 
     <EditText
         android:id="@+id/editText2"
@@ -77,6 +78,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile_picture" />
+
+    <Button
+        android:id="@+id/signOut"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="74dp"
+        android:layout_weight="2"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/seg_ui_semibold"
+        android:text="Sign Out"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 

@@ -28,6 +28,11 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         super.onViewCreated(view, savedInstanceState)
         val controller = Navigation.findNavController(view)
 
+        if (FirebaseAuth.getInstance().currentUser !=null){
+            startActivity(Intent(activity, TimelineActivity::class.java))
+            getActivity()?.finish()
+        }
+
 
         init()
         loginListeners()

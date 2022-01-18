@@ -32,6 +32,10 @@
         android:id="@+id/forgetPasswordFragment"
         tools:layout="@layout/fragment_forget"
         android:name="com.example.chik_chika.fragments.ForgetPasswordFragment"
-        android:label="ForgetPasswordFragment" />
+        android:label="ForgetPasswordFragment" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
 </navigation>

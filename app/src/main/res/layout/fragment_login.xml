@@ -56,9 +56,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:fontFamily="@font/seg_ui_semibold"
-            android:text="LOGIN"
+            android:text="Sign In"
             android:textColor="@color/colorTextBlack"
-            android:textSize="26dp"
+            android:textSize="28dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -125,24 +125,24 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginRight="48dp"
                 android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="5">
 
                 <TextView
                     android:id="@+id/buttonReset"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:fontFamily="@font/seg_ui_semibold"
                     android:text="Forgot password?"
                     android:textColor="@color/colorTextBlack"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <Button
                     android:id="@+id/buttonLogin"
                     android:layout_width="0dp"
                     android:layout_height="52dp"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:background="@drawable/button_background"
                     android:fontFamily="@font/seg_ui_semibold"
                     android:text="Sign In"
