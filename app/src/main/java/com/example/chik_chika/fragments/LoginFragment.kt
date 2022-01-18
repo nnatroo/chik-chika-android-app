@@ -98,6 +98,7 @@ class LoginFragment : Fragment(R.layout.fragment_login){
                     startActivity(Intent(activity, TimelineActivity::class.java))
                     getActivity()?.finish()
 
+
             }else {
                     Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
                 }

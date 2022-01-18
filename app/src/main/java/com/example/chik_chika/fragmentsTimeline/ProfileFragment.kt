@@ -9,16 +9,18 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.example.chik_chika.R
-
+import com.google.firebase.auth.FirebaseAuth
 
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private lateinit var imageVewPicture : ImageView
+    private lateinit var textViewMail : TextView
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,10 +33,14 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             loadImage()
         })
 
+        val userMail = FirebaseAuth.getInstance().currentUser?.email
+        textViewMail.text = userMail
+
     }
 
     private fun init(){
         imageVewPicture = requireView().findViewById(R.id.imageViewPicture)
+        textViewMail = requireView().findViewById(R.id.textViewMail)
 
     }
 
