@@ -6,6 +6,7 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -18,8 +19,8 @@ class LoginFragment : Fragment(R.layout.fragment_login){
     private lateinit var editTextMail : EditText
     private lateinit var editTextPassword : EditText
     private lateinit var buttonLogin : Button
-    private lateinit var buttonReset : Button
-    private lateinit var buttonRegister : Button
+    private lateinit var buttonReset : TextView
+    private lateinit var buttonRegister : TextView
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
     private val emailPattern2 = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+\\.+[a-z]+"
 
