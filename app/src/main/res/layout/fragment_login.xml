@@ -134,7 +134,7 @@
                     android:layout_marginLeft="12dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/seg_ui_semibold"
-                    android:text="Need Help?"
+                    android:text="Forgot password?"
                     android:textColor="@color/colorTextBlack"
                     android:textSize="18dp" />
 
