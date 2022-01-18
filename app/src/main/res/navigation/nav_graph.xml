@@ -22,7 +22,11 @@
         android:id="@+id/registerFragment"
         android:name="com.example.chik_chika.fragments.RegisterFragment"
         tools:layout="@layout/fragment_register"
-        android:label="RegisterFragment" />
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/forgetPasswordFragment"

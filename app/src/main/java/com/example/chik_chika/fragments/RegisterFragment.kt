@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -20,6 +21,7 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
     private lateinit var editPassword: EditText
     private lateinit var editPassword2: EditText
     private lateinit var signInButton: Button
+    private lateinit var buttonLoginFragment : TextView
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
     private val emailPattern2 = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+\\.+[a-z]+"
 
@@ -27,10 +29,16 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val controller = Navigation.findNavController(view)
 
 
         init()
         registerListeners()
+
+        buttonLoginFragment.setOnClickListener(){
+            val action = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
+            controller.navigate(action)
+        }
 
 
 
@@ -42,6 +50,7 @@ class RegisterFragment: Fragment(R.layout.fragment_register) {
         editPassword = requireView().findViewById(R.id.editPassword)
         editPassword2 = requireView().findViewById(R.id.editPassword2)
         signInButton = requireView().findViewById(R.id.signInButton)
+        buttonLoginFragment = requireView().findViewById(R.id.buttonLoginFragment)
 
     }
 
