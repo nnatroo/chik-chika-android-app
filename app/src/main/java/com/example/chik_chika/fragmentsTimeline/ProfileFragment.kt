@@ -50,9 +50,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         saveButtonListeners()
 
 
-
-
-
         val userMail = FirebaseAuth.getInstance().currentUser?.email
         textViewMail.text = userMail
 
@@ -73,7 +70,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     editTextUrl.hint = userInfo.url
                 }
 
-                Glide.with(this@ProfileFragment).load(userInfo.imageVewPicture)
+                Glide.with(this@ProfileFragment).load(userInfo.url).placeholder(R.drawable.profile_picture).into(imageVewPicture)
 
 
 
