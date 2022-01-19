@@ -12,6 +12,7 @@
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/drawable/ic_baseline_mail_outline_24.xml" value="0.3828125" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.3828125" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.3828125" />
+        <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/drawable/item_tweet.xml" value="0.3828125" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/activity_timeline.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/fragment_change_password.xml" value="0.36666666666666664" />
@@ -21,6 +22,7 @@
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/fragment_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/fragment_timeline.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/fragment_timeline_timeline.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/item_feed.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/login_test.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/register_test.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nugon/AndroidStudioProjects/ChikChika/app/src/main/res/layout/test.xml" value="0.36666666666666664" />

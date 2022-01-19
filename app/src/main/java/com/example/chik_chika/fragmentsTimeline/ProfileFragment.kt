@@ -16,11 +16,14 @@ import com.example.chik_chika.MainActivity
 import com.example.chik_chika.R
 import com.example.chik_chika.UserInfo
 import com.example.chik_chika.fragments.LoginFragmentDirections
+import com.google.firebase.FirebaseOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.app
 
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -33,7 +36,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private lateinit var buttonSave : Button
     private lateinit var editTextUrl : EditText
     private lateinit var editTextBio : EditText
-
 
 
     private val auth = FirebaseAuth.getInstance()
@@ -55,7 +57,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         db.child(auth.currentUser?.uid!!).addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val userInfo = snapshot.getValue(UserInfo::class.java) ?: return
-
 
 
                 if (userInfo.name != ""){
