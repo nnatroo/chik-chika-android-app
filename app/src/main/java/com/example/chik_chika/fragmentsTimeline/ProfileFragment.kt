@@ -12,6 +12,7 @@ import android.widget.*
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
 import com.example.chik_chika.MainActivity
 import com.example.chik_chika.R
 import com.example.chik_chika.UserInfo
@@ -50,12 +51,16 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
 
 
+
+
         val userMail = FirebaseAuth.getInstance().currentUser?.email
         textViewMail.text = userMail
 
         db.child(auth.currentUser?.uid!!).addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val userInfo = snapshot.getValue(UserInfo::class.java) ?: return
+
+
 
                 if (userInfo.name != ""){
                     editTextName.hint = userInfo.name}
@@ -64,9 +69,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     editTextBio.hint = userInfo.bio
                 }
 
-                if (userInfo.url != ""){
+                if (userInfo.url != "") {
                     editTextUrl.hint = userInfo.url
                 }
+
+                Glide.with(this@ProfileFragment).load(userInfo.imageVewPicture)
 
 
 
@@ -81,6 +88,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         })
 
     }
+
 
     private fun init(){
         imageVewPicture = requireView().findViewById(R.id.imageViewPicture)
