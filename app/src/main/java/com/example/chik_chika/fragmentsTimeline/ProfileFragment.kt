@@ -19,6 +19,7 @@ import com.example.chik_chika.MainActivity
 import com.example.chik_chika.R
 import com.example.chik_chika.fragments.LoginFragmentDirections
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -27,6 +28,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private lateinit var textViewMail : TextView
     private lateinit var signOut : Button
     private lateinit var textViewChangePassword : TextView
+    private val data = FirebaseDatabase.getInstance().getReference("UserInfo")
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,12 +37,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         init()
         signOutListener()
         changePasswordListener()
-        checkPermission()
 
 
-        imageVewPicture.setOnClickListener( View.OnClickListener {
-            loadImage()
-        })
+
 
         val userMail = FirebaseAuth.getInstance().currentUser?.email
         textViewMail.text = userMail
@@ -75,63 +74,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
     }
 
-    val READIMAGE:Int=253
-    fun checkPermission(){
 
-        if(Build.VERSION.SDK_INT>=23){
-            if(activity?.let {
-                    ActivityCompat.checkSelfPermission(
-                        it,
-                        android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                } !=
-                PackageManager.PERMISSION_GRANTED){
-
-                requestPermissions(arrayOf( android.Manifest.permission.READ_EXTERNAL_STORAGE),READIMAGE)
-                return
-            }
-        }
-
-    }
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-
-        when(requestCode){
-            READIMAGE->{
-                if(grantResults[0]==PackageManager.PERMISSION_GRANTED){
-
-                }else{
-                    Toast.makeText(activity,"Cannot access your images",Toast.LENGTH_LONG).show()
-                }
-            }
-            else-> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        }
-
-
-    }
-
-    val PICK_IMAGE_CODE=123
-    fun loadImage(){
-
-        var intent=Intent(Intent.ACTION_PICK,
-            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(intent,PICK_IMAGE_CODE)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if(requestCode==PICK_IMAGE_CODE  && data!=null && resultCode == RESULT_OK){
-
-            val selectedImage=data.data
-            val filePathColum= arrayOf(MediaStore.Images.Media.DATA)
-            val cursor= activity?.contentResolver?.query(selectedImage!!,filePathColum,null,null,null)
-            cursor!!.moveToFirst()
-            val coulomIndex=cursor!!.getColumnIndex(filePathColum[0])
-            val picturePath=cursor!!.getString(coulomIndex)
-            cursor!!.close()
-            imageVewPicture.setImageBitmap(BitmapFactory.decodeFile(picturePath))
-        }
-
-    }
 
 
 

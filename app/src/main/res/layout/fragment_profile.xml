@@ -40,6 +40,23 @@
         app:layout_constraintStart_toEndOf="@+id/imageViewPicture"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="4dp"
+        android:drawableTint="@color/black"
+        android:hint="Type URL"
+        android:maxLength="12"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMail"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPicture"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
