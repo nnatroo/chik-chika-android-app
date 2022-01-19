@@ -8,27 +8,36 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.chik_chika.MainActivity
 import com.example.chik_chika.R
+import com.example.chik_chika.UserInfo
 import com.example.chik_chika.fragments.LoginFragmentDirections
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private lateinit var imageVewPicture : ImageView
+    private lateinit var editTextName : EditText
     private lateinit var textViewMail : TextView
     private lateinit var signOut : Button
     private lateinit var textViewChangePassword : TextView
-    private val data = FirebaseDatabase.getInstance().getReference("UserInfo")
+    private lateinit var buttonSave : Button
+    private lateinit var editTextUrl : EditText
+    private lateinit var editTextBio : EditText
+
+
+
+    private val auth = FirebaseAuth.getInstance()
+    private val db = FirebaseDatabase.getInstance().getReference("UserInfo")
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,12 +46,39 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         init()
         signOutListener()
         changePasswordListener()
-
+        saveButtonListeners()
 
 
 
         val userMail = FirebaseAuth.getInstance().currentUser?.email
         textViewMail.text = userMail
+
+        db.child(auth.currentUser?.uid!!).addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val userInfo = snapshot.getValue(UserInfo::class.java) ?: return
+
+                if (userInfo.name != ""){
+                    editTextName.hint = userInfo.name}
+
+                if (userInfo.bio != ""){
+                    editTextBio.hint = userInfo.bio
+                }
+
+                if (userInfo.url != ""){
+                    editTextUrl.hint = userInfo.url
+                }
+
+
+
+
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
 
     }
 
@@ -51,6 +87,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         textViewMail = requireView().findViewById(R.id.textViewMail)
         signOut = requireView().findViewById(R.id.signOut)
         textViewChangePassword = requireView().findViewById(R.id.textViewChangePassword)
+        buttonSave = requireView().findViewById(R.id.buttonSave)
+        editTextName = requireView().findViewById(R.id.editTextName)
+        editTextUrl = requireView().findViewById(R.id.editTextUrl)
+        editTextBio = requireView().findViewById(R.id.editTextBio)
 
     }
 
@@ -63,8 +103,28 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
 
     }
+    private fun saveButtonListeners() {
+        buttonSave.setOnClickListener {
+
+            val name = editTextName.text.toString()
+
+            if (name.isEmpty()) {
+                editTextName.error = "Enter Name"
+            }
+            val url = editTextUrl.text.toString()
+            val bio = editTextBio.text.toString()
+            val userInfo = UserInfo(name, url, bio)
 
 
+
+            db.child(auth.currentUser?.uid!!).setValue(userInfo)
+            Toast.makeText(activity, "Changes Saved Successfully", Toast.LENGTH_SHORT).show()
+
+
+        }
+
+
+    }
 
     private fun signOutListener(){
         signOut.setOnClickListener(){
@@ -73,17 +133,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             activity?.finish()
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
