@@ -155,6 +155,43 @@
         android:background="@drawable/card_background"
         android:elevation="36dp">
 
+        <EditText
+            android:id="@+id/editTextTweet"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginStart="24dp"
+            android:textAlignment="viewStart"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/segoe_ui_regular"
+            android:hint="Tweet now"
+            android:inputType="text"
+            android:paddingStart="5dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/signOut"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonTweet"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="2"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/seg_ui_semibold"
+            android:text="Tweet"
+            android:textAllCaps="false"
+            android:textColor="@color/colorButtonText"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/editTextTweet"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTweet" />
+
         <Button
             android:id="@+id/signOut"
             android:layout_width="wrap_content"

@@ -28,7 +28,7 @@ import com.google.firebase.ktx.app
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
-    private lateinit var imageVewPicture : ImageView
+    private lateinit var imageViewPicture : ImageView
     private lateinit var editTextName : EditText
     private lateinit var textViewMail : TextView
     private lateinit var signOut : Button
@@ -36,10 +36,14 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private lateinit var buttonSave : Button
     private lateinit var editTextUrl : EditText
     private lateinit var editTextBio : EditText
+    private lateinit var editTextTweet : EditText
+    private lateinit var buttonTweet : Button
+
 
 
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseDatabase.getInstance().getReference("UserInfo")
+    private val dbTweets = FirebaseDatabase.getInstance().getReference("Tweets")
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,6 +53,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         signOutListener()
         changePasswordListener()
         saveButtonListeners()
+        tweetListener()
 
 
         val userMail = FirebaseAuth.getInstance().currentUser?.email
@@ -70,11 +75,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     editTextUrl.hint = userInfo.url
                 }
 
-                Glide.with(this@ProfileFragment).load(userInfo.url).placeholder(R.drawable.profile_picture).into(imageVewPicture)
-
-
-
-
+                Glide.with(this@ProfileFragment).load(userInfo.url).placeholder(R.drawable.profile_picture).into(imageViewPicture)
 
             }
 
@@ -86,9 +87,31 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     }
 
+    private fun tweetListener(){
+        buttonTweet.setOnClickListener {
+            val text = editTextTweet.text.toString()
+            db.child(auth.currentUser?.uid!!).get().addOnSuccessListener {
+                if (it.exists()) {
+                    val tweetMessage = editTextTweet.text.toString()
+                    if (tweetMessage.isNotEmpty()){
+                        val id = dbTweets.push().key
+                        dbTweets.child(id.toString()).child("userName").setValue(editTextName.hint.toString())
+                        dbTweets.child(id.toString()).child("text").setValue(text)
+                        dbTweets.child(id.toString()).child("pictureUrl").setValue(editTextUrl.hint.toString())
+                        Toast.makeText(activity, "The post is published", Toast.LENGTH_LONG).show()
+
+                    }else Toast.makeText(activity, "faill", Toast.LENGTH_LONG).show()
+
+                }
+            }
+
+        }
+
+    }
+
 
     private fun init(){
-        imageVewPicture = requireView().findViewById(R.id.imageViewPicture)
+        imageViewPicture = requireView().findViewById(R.id.imageViewPicture)
         textViewMail = requireView().findViewById(R.id.textViewMail)
         signOut = requireView().findViewById(R.id.signOut)
         textViewChangePassword = requireView().findViewById(R.id.textViewChangePassword)
@@ -96,6 +119,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         editTextName = requireView().findViewById(R.id.editTextName)
         editTextUrl = requireView().findViewById(R.id.editTextUrl)
         editTextBio = requireView().findViewById(R.id.editTextBio)
+        editTextTweet = requireView().findViewById(R.id.editTextTweet)
+        buttonTweet = requireView().findViewById(R.id.buttonTweet)
 
     }
 
