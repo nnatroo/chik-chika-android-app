@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:weightSum="5"
+    android:weightSum="4"
     android:background="@color/colorPrimary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,7 +39,7 @@
             android:backgroundTintMode="add"
             android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawablePadding="4dp"
-            android:drawableTint="@color/black"
+            android:drawableTint="@color/colorButton"
             android:fontFamily="@font/segoe_ui_regular"
             android:hint="Type your name"
             android:inputType="text"
@@ -61,7 +61,7 @@
             android:backgroundTintMode="add"
             android:drawableStart="@drawable/ic_baseline_link_24"
             android:drawablePadding="4dp"
-            android:drawableTint="@color/black"
+            android:drawableTint="@color/colorButton"
             android:fontFamily="@font/segoe_ui_regular"
             android:hint="Type URL"
             android:inputType="text"
@@ -83,7 +83,7 @@
             android:backgroundTintMode="add"
             android:drawableStart="@drawable/ic_baseline_notes_24"
             android:drawablePadding="4dp"
-            android:drawableTint="@color/black"
+            android:drawableTint="@color/colorButton"
             android:fontFamily="@font/segoe_ui_regular"
             android:hint="About me"
             android:inputType="text"
@@ -98,8 +98,7 @@
             android:id="@+id/textViewMail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:drawableStart="@drawable/ic_baseline_mail_outline_24"
             android:drawablePadding="5dp"
             android:drawableTint="@color/colorButtonText"
@@ -108,14 +107,13 @@
             android:text="current.user.1@gmail.com"
             android:textColor="@color/colorButtonText"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageViewPicture"
             app:layout_constraintTop_toBottomOf="@+id/imageViewPicture" />
 
         <TextView
             android:id="@+id/textViewChangePassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawablePadding="5dp"
@@ -125,15 +123,14 @@
             android:text="Change Password"
             android:textColor="@color/colorButtonText"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewMail"
             app:layout_constraintTop_toBottomOf="@+id/textViewMail" />
 
         <Button
             android:id="@+id/buttonSave"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginTop="14dp"
             android:background="@drawable/button_background"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/seg_ui_semibold"
@@ -141,9 +138,8 @@
             android:textAllCaps="false"
             android:textColor="@color/colorButton"
             android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewChangePassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMail" />
+            app:layout_constraintEnd_toEndOf="@+id/editTextBio"
+            app:layout_constraintTop_toBottomOf="@+id/editTextBio" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -151,35 +147,33 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:background="@drawable/card_background"
-        android:elevation="36dp">
+        android:layout_weight="2"
+        android:background="@drawable/card_background">
 
         <EditText
             android:id="@+id/editTextTweet"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="150dp"
             android:layout_marginStart="24dp"
-            android:textAlignment="viewStart"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="35dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edit_text_background"
             android:fontFamily="@font/segoe_ui_regular"
+            android:gravity="top|left"
             android:hint="Tweet now"
-            android:inputType="text"
-            android:paddingStart="5dp"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
             android:paddingEnd="15dp"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/signOut"
+            android:paddingBottom="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/buttonTweet"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="52dp"
             android:layout_marginTop="16dp"
             android:layout_weight="2"
@@ -194,19 +188,19 @@
 
         <Button
             android:id="@+id/signOut"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="52dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="76dp"
+            android:layout_marginTop="16dp"
             android:layout_weight="2"
             android:background="@drawable/button_background"
             android:fontFamily="@font/seg_ui_semibold"
             android:text="Sign Out"
+            android:backgroundTint="@color/colorTextPrimary"
             android:textAllCaps="false"
             android:textColor="@color/colorButtonText"
             android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/editTextTweet"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTweet" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

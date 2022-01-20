@@ -55,6 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/seg_ui_semibold"
             android:text="Sign In"
             android:textColor="@color/colorTextBlack"
@@ -68,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="96dp"
+            android:layout_marginBottom="112dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout">
 
@@ -107,16 +108,6 @@
                 android:textColor="@color/colorTextBlack"
                 android:textColorHint="@color/colorPlaceholder" />
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="18dp"
-                android:buttonTint="@color/colorBlack"
-                android:fontFamily="@font/seg_ui_semibold"
-                android:text="Remember me"
-                android:textColor="@color/colorTextBlack"
-                android:textSize="18dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

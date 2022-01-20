@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.app
 
 
+
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private lateinit var imageViewPicture : ImageView
@@ -55,31 +56,34 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         saveButtonListeners()
         tweetListener()
 
-
+//      Fun for profile textView mail
         val userMail = FirebaseAuth.getInstance().currentUser?.email
         textViewMail.text = userMail
 
         db.child(auth.currentUser?.uid!!).addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                val userInfo = snapshot.getValue(UserInfo::class.java) ?: return
+                val userInfo : UserInfo = snapshot.getValue(UserInfo::class.java) ?: return
 
-
-                if (userInfo.name != ""){
-                    editTextName.hint = userInfo.name}
-
-                if (userInfo.bio != ""){
+                if (userInfo.name.isNotEmpty()) {
+                    editTextName.hint = userInfo.name
+                }
+                if (userInfo.bio.isNotEmpty()) {
                     editTextBio.hint = userInfo.bio
                 }
-
-                if (userInfo.url != "") {
+                if (userInfo.url.isNotEmpty()) {
                     editTextUrl.hint = userInfo.url
                 }
 
-                Glide.with(this@ProfileFragment).load(userInfo.url).placeholder(R.drawable.profile_picture).into(imageViewPicture)
+
+
+                Glide.with(requireActivity()).load(userInfo.url).placeholder(R.drawable.profile_picture).into(imageViewPicture)
+
+
 
             }
 
             override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(activity, "DBerror", Toast.LENGTH_SHORT).show()
 
             }
 
@@ -137,14 +141,17 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         buttonSave.setOnClickListener {
 
             val name = editTextName.text.toString()
-
-            if (name.isEmpty()) {
-                editTextName.error = "Enter Name"
-            }
             val url = editTextUrl.text.toString()
             val bio = editTextBio.text.toString()
             val userInfo = UserInfo(name, url, bio)
 
+            if (name.isEmpty()) {
+                editTextName.error = "Enter Name"
+            }
+
+            editTextUrl.hint = url
+
+            editTextBio.hint = bio
 
 
             db.child(auth.currentUser?.uid!!).setValue(userInfo)
