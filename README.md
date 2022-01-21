@@ -13,11 +13,18 @@ This is a Chik-Chika. Chick-Chicka is android app, which is based on popular soc
 
 ---
 
-After downloading the application, the user must register, after that he will enter in the social network environment, where he can enter the name, Photo url, About me (Bio). He can possible to write "self" (post) on the profile page, which can be published on the Feed page. The feed page can display self-written by other users.
+After downloading the application user should register, after which they will enter the social network environment, where user must type in their name, Photo url and About me(Bio). On profile page user can tweet(post), which can be posted on feed page. You can also see other users posts.
 
 აპლიკაციის გადმოწერის შემდეგ მომხმარებელმა უნდა გაიაროს რეგისტრაცია, ამის შემდეგ ის მოხვდება სოციალური ქსელის გარემოში, სადაც უნდა შეიყვანოს სახელი, Photo url, About me (Bio). პროფილის page-ზე შესაძლებელია "თვითის" (პოსტის) დაწერა, რომლის გამოქვეყნება შესაძლებელია Feed გვერდზე. Feed გვერდზე შესაძლებელია სხვა მომხმარებლების მიერ დაწერილი თვითების ნახვა.
 
 ## FEATURES
+
+•    Changing password from Profile page or during signing in.
+•    It is possible to change Profile Data info. 
+•    Changing user profile picture.
+•    After registering user does not have to sign in again.
+•    Users profile picture and name can be seen on feed page.
+•    Userfriendly design.
 
 - პაროლის შეცვლა შესაძლებელია ( Change Password ღილაკზე დაჭერით ) , როგორც Profile page-დან, ისე Sign in - ის დროს ( მეილის დახმარებით ) .
 - შესაძლებელია მონაცემების შეცვლა ( Profile page - დან ) .
