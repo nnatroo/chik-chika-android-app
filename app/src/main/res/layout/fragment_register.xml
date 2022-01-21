@@ -39,7 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/seg_ui_semibold"
-                android:text="     Join Twitter today."
+                android:text="Join Chik-Chika now today."
+                android:paddingStart="7dp"
                 android:textColor="@color/colorTextWhite"
                 android:textSize="18dp" />
         </LinearLayout>
