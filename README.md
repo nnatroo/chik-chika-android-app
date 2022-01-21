@@ -19,12 +19,12 @@ After downloading the application user should register, after which they will en
 
 ## FEATURES
 
-•    Changing password from Profile page or during signing in.
-•    It is possible to change Profile Data info. 
-•    Changing user profile picture.
-•    After registering user does not have to sign in again.
-•    Users profile picture and name can be seen on feed page.
-•    Userfriendly design.
+- Changing password from Profile page or during signing in.
+- It is possible to change Profile Data info. 
+- Changing user profile picture.
+- After registering user does not have to sign in again.
+- Users profile picture and name can be seen on feed page.
+- Userfriendly design.
 
 - პაროლის შეცვლა შესაძლებელია ( Change Password ღილაკზე დაჭერით ) , როგორც Profile page-დან, ისე Sign in - ის დროს ( მეილის დახმარებით ) .
 - შესაძლებელია მონაცემების შეცვლა ( Profile page - დან ) .
