@@ -4,6 +4,8 @@
 
 This is a Chik-Chika. Chick-Chicka is android app, which is based on popular social network - "Twitter". The application uses Firebase Authentication and Realtime Database services.
 
+##
+
 ეს არის ჭიკ-ჭიკა. ჭიკ-ჭიკა არის ანდროიდ აპლიკაცია, რომელიც დაფუძნებულია პოპულარულ სოციალურ ქსელ თვითერზე. აპლიკაცია იყენებს Firebase Authentication და Realtime Database სერვისებს.
 
 ---
@@ -14,6 +16,8 @@ This is a Chik-Chika. Chick-Chicka is android app, which is based on popular soc
 ---
 
 After downloading the application user should register, after which they will enter the social network environment, where user must type in their name, Photo url and About me(Bio). On profile page user can tweet(post), which can be posted on feed page. You can also see other users posts.
+
+##
 
 აპლიკაციის გადმოწერის შემდეგ მომხმარებელმა უნდა გაიაროს რეგისტრაცია, ამის შემდეგ ის მოხვდება სოციალური ქსელის გარემოში, სადაც უნდა შეიყვანოს სახელი, Photo url, About me (Bio). პროფილის page-ზე შესაძლებელია "თვითის" (პოსტის) დაწერა, რომლის გამოქვეყნება შესაძლებელია Feed გვერდზე. Feed გვერდზე შესაძლებელია სხვა მომხმარებლების მიერ დაწერილი თვითების ნახვა.
 
