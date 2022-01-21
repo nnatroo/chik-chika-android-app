@@ -26,6 +26,8 @@ After downloading the application user should register, after which they will en
 - Users profile picture and name can be seen on feed page.
 - Userfriendly design.
 
+##
+
 - პაროლის შეცვლა შესაძლებელია ( Change Password ღილაკზე დაჭერით ) , როგორც Profile page-დან, ისე Sign in - ის დროს ( მეილის დახმარებით ) .
 - შესაძლებელია მონაცემების შეცვლა ( Profile page - დან ) .
 - შეიძლება ნებისმიერი ფოტოს დაყენება Profile picture - ზე.
