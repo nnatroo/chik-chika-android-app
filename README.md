@@ -37,7 +37,7 @@
 
 ---
 
-Copyright (c) 2021 Chik-Chika
+Copyright (c) 2022 Chik-Chika
 
 ---
 
